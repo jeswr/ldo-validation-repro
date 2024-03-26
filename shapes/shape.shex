@@ -1,0 +1,6 @@
+PREFIX : <http://example.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:Shape {
+    :prop xsd:string{1,1}
+}

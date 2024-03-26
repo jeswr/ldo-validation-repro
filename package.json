@@ -1,0 +1,20 @@
+{
+  "name": "ldo-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ldo build --input ./shapes --output ./ldo",
+    "test": "ts-node test.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ldo/ldo": "^0.0.1-alpha.24"
+  },
+  "devDependencies": {
+    "@ldo/cli": "^0.0.1-alpha.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  }
+}
