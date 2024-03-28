@@ -1,9 +1,21 @@
-import { createLdoDataset } from "@ldo/ldo";
-import { ShapeShapeType } from "./ldo/shape.shapeTypes";
+import { createLdoDataset, getDataset } from "@ldo/ldo";
+import { OuterShapeShapeType } from "./ldo/shape.shapeTypes";
 
-const subject = createLdoDataset([]).usingType(ShapeShapeType).fromSubject("http://example.org/Shape");
-
+// This includes innerProp triple
 console.log(
-    // Should be "string" but returns undefined
-    subject.prop, typeof subject.prop,
+    ...getDataset(createLdoDataset([]).usingType(OuterShapeShapeType).fromJson({
+        outerProp: {
+            "@id": "http://example.com/outerHasId",
+            innerProp: "Hello World",
+        },
+    }))
+);
+
+// This does not include the innerProp triple
+console.log(
+    ...getDataset(createLdoDataset([]).usingType(OuterShapeShapeType).fromJson({
+        outerProp: {
+            innerProp: "Hello World",
+        },
+    }))
 );

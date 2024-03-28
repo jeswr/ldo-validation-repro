@@ -1,6 +1,10 @@
 PREFIX : <http://example.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
+:OuterShape {
+    :outerProp @:Shape{1,1}
+}
+
 :Shape {
-    :prop xsd:string{1,1}
+    :innerProp xsd:string{1,1}
 }
